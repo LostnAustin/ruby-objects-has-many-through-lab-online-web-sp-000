@@ -19,7 +19,7 @@ class Doctor
     end
   end
 
-  def new_appointment(date, patient)
+  def new_appointment(patient, date)
   #  binding.pry
     Appointment.new(date, patient, self)
 
@@ -28,8 +28,8 @@ class Doctor
 #patients, that iterates over that doctor's Appointments and
  #collects the patient that belongs to each Appointments.
   def patients
-    appointments.collect do |patient|
-     patient.date
+    appointments.collect do |appointment|
+     appointment.patient
     end
   end
 end
